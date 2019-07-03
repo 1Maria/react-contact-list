@@ -1,7 +1,18 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 
-const ContactList = () => {
-  return <h1>Hello From cOntAcT List</h1>;
-};
+const ContactList = ({contacts}) => (
+  <div>
+    <ul>
+      {
+        contacts.map(c => (
+          <li key={c.id}>
+            <Link to={`/contact/${c.id}`}>{c.name}</Link>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+);
 
 export default ContactList;
