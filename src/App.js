@@ -38,7 +38,7 @@ class App extends Component {
         <main>
           <Switch>
             <Route exact path="/" render={() => <ContactList contacts={this.state.contacts} /> }/>
-            <Route path="/contact/:id" component={Contact} />
+            <Route path="/contact/:id" render={(routerProps) => <Contact routerProps={routerProps} contacts={this.state.contacts} /> }/>
             <Route path="/add-contact" render={(routerProps) => <AddContact routerProps={routerProps} addContact={this.addContact} contacts={this.state.contacts} /> }/>
           </Switch>
         </main>
