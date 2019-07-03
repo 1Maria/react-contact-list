@@ -24,6 +24,7 @@ class App extends Component {
   }
 
   addContact (contact) {
+    console.log(contact);
     this.setState({contacts: [...this.state.contacts, contact]});
   }
 
@@ -38,7 +39,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" render={() => <ContactList contacts={this.state.contacts} /> }/>
             <Route path="/contact/:id" component={Contact} />
-            <Route path="/add-contact" component={AddContact} />
+            <Route path="/add-contact" render={(routerProps) => <AddContact routerProps={routerProps} addContact={this.addContact} contacts={this.state.contacts} /> }/>
           </Switch>
         </main>
         <Link to="/">Contact List </Link>
