@@ -43,9 +43,7 @@ class App extends Component {
           </Switch>
         </main>
         <Link to="/">Contact List </Link>
-        <Link to="/contact/1">Contact </Link>
-        <Link to="/contact/0">Contact </Link>
-        <Link to="/add-contact">Add cOnTaCt</Link>
+        <Link to="/add-contact">Add Contact</Link>
       </div>
     );
   }
