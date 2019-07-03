@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Switch, Route, Link } from 'react-router-dom';
 import ContactList from './contact-list';
@@ -32,8 +31,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Contacts</h1>
         </header>
         <main>
           <Switch>
@@ -42,7 +40,6 @@ class App extends Component {
             <Route path="/add-contact" render={(routerProps) => <AddContact routerProps={routerProps} addContact={this.addContact} contacts={this.state.contacts} /> }/>
           </Switch>
         </main>
-        <Link to="/">Contact List </Link>
         <Link to="/add-contact">Add Contact</Link>
       </div>
     );
